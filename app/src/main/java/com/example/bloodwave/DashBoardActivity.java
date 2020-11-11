@@ -68,7 +68,6 @@ public class DashBoardActivity extends AppCompatActivity {
 
     public void CurrentBloodReq(View view) {
         Intent intent = new Intent(getApplicationContext(), CurrentBloodRequestActivity.class);
-        intent.putExtra("myemail",createDonerModel.email);
         startActivity(intent);
     }
 
@@ -123,6 +122,8 @@ public class DashBoardActivity extends AppCompatActivity {
 
     public void RequestBlood(View view) {
         Intent intent = new Intent(getApplicationContext(), RequestBloodActivity.class);
+        intent.putExtra("myemail",createDonerModel.email);
+
         startActivity(intent);
     }
 }
