@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "821892799183",
+    "firebase_url": "https://bloodwave-d0db2.firebaseio.com",
+    "project_id": "bloodwave-d0db2",
+    "storage_bucket": "bloodwave-d0db2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821892799183:android:388b8c6fc2ea68533b75ba",
+        "android_client_info": {
+          "package_name": "com.example.bloodwave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821892799183-aph9lfgstjn32dioaqg0gme78vbksgn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFDgXR5j4oAfwu6eDlvzpYVoJ1qkmm_q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821892799183-aph9lfgstjn32dioaqg0gme78vbksgn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
