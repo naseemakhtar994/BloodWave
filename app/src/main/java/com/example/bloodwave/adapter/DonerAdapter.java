@@ -44,12 +44,10 @@ public class DonerAdapter extends RecyclerView.Adapter<DonerAdapter.ViewHolder>{
         holder.textViewName.setText( myListData.get("name"));
         holder.textViewBloodGroup.setText( myListData.get("bloodgroup"));
         holder.textViewMobile.setText( myListData.get("phone"));
-//        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(view.getContext(),"click on item: "+myListData.getDescription(),Toast.LENGTH_LONG).show();
-//            }
-//        });
+        if(myListData.get("date") !=null){
+            holder.textViewDate.setText( myListData.get("date"));
+
+        }
     }
 
 
@@ -62,13 +60,14 @@ public class DonerAdapter extends RecyclerView.Adapter<DonerAdapter.ViewHolder>{
         public TextView textViewName;
         public TextView textViewBloodGroup;
         public TextView textViewMobile;
-        public TextView textView;
+        public TextView textViewDate;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
             this.textViewName = (TextView) itemView.findViewById(R.id.textViewName);
             this.textViewBloodGroup = (TextView) itemView.findViewById(R.id.textViewBloodGroup);
             this.textViewMobile = (TextView) itemView.findViewById(R.id.textViewMobile);
+            this.textViewDate = (TextView) itemView.findViewById(R.id.textViewDate);
         }
     }
 }

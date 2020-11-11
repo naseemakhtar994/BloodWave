@@ -8,10 +8,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashBoardActivity"></activity>
-         <activity android:name=".DonerListingActivity"></activity>
-         <activity android:name=".CreateDonerAccountActivity"></activity>
+        <activity android:name=".RequestBloodActivity"
+            android:label="Blood Request"
+            ></activity>
+        <activity android:name=".RequestListingActivity" android:label="Request Listing"></activity>
+        <activity android:name=".CurrentBloodRequestActivity" android:label="Current Blood Request"></activity>
+        <activity android:name=".DashBoardActivity" />
+        <activity android:name=".DonerListingActivity" android:label="All Doners"/>
+        <activity android:name=".DonationListingActivity" android:label="Donation Listing" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".CreateDonerAccountActivity"
+            android:label="Create Doner"
+            />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
