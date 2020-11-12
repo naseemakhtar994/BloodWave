@@ -162,7 +162,7 @@ public class CreateDonerAccountActivity extends AppCompatActivity {
                                 editor.commit();
 
 
-                                new Common().CreatAccount(CreateDonerAccountActivity.this);
+                                new Common().CreatAccount(CreateDonerAccountActivity.this,"Doner Crateted Sucessfully");
                           //                            mDatabase.child("request").updateChildren(childUpdates);
 
                             } else {

@@ -108,9 +108,9 @@ public class RequestBloodActivity extends AppCompatActivity {
     @SuppressWarnings("deprecation")
     public void setDate(View view) {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca",
-                Toast.LENGTH_SHORT)
-                .show();
+//        Toast.makeText(getApplicationContext(), "ca",
+//                Toast.LENGTH_SHORT)
+//                .show();
     }
 
     @Override
@@ -182,7 +182,7 @@ public class RequestBloodActivity extends AppCompatActivity {
 
 //                                    data.add(new CreateDonerModel(name, email, mobile, "gender", bloodgroup, date,userEmail));
                                     mDatabase.child("requests").setValue(data);
-                                    new Common().showDialog(RequestBloodActivity.this);
+                                    new Common().showDialog(RequestBloodActivity.this,"Blood Request Submit Sucessfully");
 
 
                                 } else {
@@ -218,7 +218,7 @@ public class RequestBloodActivity extends AppCompatActivity {
 //                data.add(new CreateDonerModel(name, email, mobile, "gender", bloodgroup, date,userEmail));
 //                            data.add(new CreateDonerModel("hhh",editTextEmail.getText().toString(),editTextNumber.getText().toString()));
                 mDatabase.child("requests").setValue(data);
-                new Common().showDialog(RequestBloodActivity.this);
+                new Common().showDialog(RequestBloodActivity.this,"Blood Request Submit Sucessfully");
 
             }
 

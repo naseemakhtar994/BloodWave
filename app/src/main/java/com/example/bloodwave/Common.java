@@ -6,10 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 
 public class Common {
-    public void showDialog(final Activity activity){
+    public void showDialog(final Activity activity,String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setMessage("Sucessfully Submited Data");
-        builder.setTitle("Alert!");
+        builder.setMessage(message);
+        builder.setTitle("Blood Wave");
         builder.setCancelable(false);
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
@@ -22,10 +22,10 @@ public class Common {
         alertDialog.show();
     }
 
-    public void CreatAccount(final Activity activity){
+    public void CreatAccount(final Activity activity,String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setMessage("Crate Doner Sucessfully");
-        builder.setTitle("Alert!");
+        builder.setMessage(message);
+        builder.setTitle("Blood Wave");
         builder.setCancelable(false);
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
