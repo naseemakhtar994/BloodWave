@@ -6,10 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="6dp"
     android:layout_margin="10dp"
+    android:background="#000"
+    android:backgroundTint="#000"
     app:cardCornerRadius="6dp"
     android:layout_height="wrap_content">
 <LinearLayout
     android:orientation="vertical"
+    android:background="#000"
+
     android:padding="10dp" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,7 +24,7 @@
             android:id="@+id/textViewName"
             android:layout_width="0dp"
             android:layout_weight=".7"
-            android:textColor="#000"
+            android:textColor="#fff"
             android:textSize="20sp"
             android:layout_height="wrap_content"
             android:text="Robert" />
@@ -29,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:textColor="#000"
+            android:textColor="#fff"
 
             android:textSize="18sp"
 
@@ -44,6 +48,7 @@
             android:layout_width="0dp"
             android:layout_weight=".7"
             android:textSize="18sp"
+            android:textColor="#fff"
 
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -53,13 +58,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:textColor="#000"
+            android:textColor="#fff"
 
             android:textSize="18sp"
  />
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textViewAddress"
+        android:layout_width="wrap_content"
+        android:text="Address"
+        android:textColor="#fff"
+        android:textSize="18sp"
+android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

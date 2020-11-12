@@ -53,6 +53,7 @@ public  class DonerListingActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                Log.e("","");
 //                Log.w(TAG, "onCancelled", databaseError.toException());
             }
         });

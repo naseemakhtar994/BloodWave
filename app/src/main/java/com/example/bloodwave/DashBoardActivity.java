@@ -126,4 +126,19 @@ public class DashBoardActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void signOut(View view) {
+
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putString(User, null);
+
+        editor.commit();
+
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+
+        startActivity(intent);
+        finish();
+
+    }
 }

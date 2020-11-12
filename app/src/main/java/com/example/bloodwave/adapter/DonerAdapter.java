@@ -48,6 +48,11 @@ public class DonerAdapter extends RecyclerView.Adapter<DonerAdapter.ViewHolder>{
             holder.textViewDate.setText( myListData.get("date"));
 
         }
+        if(myListData.get("address") !=null){
+            holder.textViewAddress.setText(myListData.get("address"));
+        }else {
+            holder.textViewAddress.setVisibility(View.GONE);
+        }
     }
 
 
@@ -61,6 +66,7 @@ public class DonerAdapter extends RecyclerView.Adapter<DonerAdapter.ViewHolder>{
         public TextView textViewBloodGroup;
         public TextView textViewMobile;
         public TextView textViewDate;
+        public TextView textViewAddress;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -68,6 +74,7 @@ public class DonerAdapter extends RecyclerView.Adapter<DonerAdapter.ViewHolder>{
             this.textViewBloodGroup = (TextView) itemView.findViewById(R.id.textViewBloodGroup);
             this.textViewMobile = (TextView) itemView.findViewById(R.id.textViewMobile);
             this.textViewDate = (TextView) itemView.findViewById(R.id.textViewDate);
+            this.textViewAddress = (TextView) itemView.findViewById(R.id.textViewAddress);
         }
     }
 }

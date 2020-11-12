@@ -7,6 +7,10 @@ public class CreateDonerModel {
     public  String gender;
     public  String bloodgroup;
     public  String date;
+    public  String  address;
+    public CreateDonerModel(){
+
+    }
 
     public CreateDonerModel(String name, String email, String phone,String gender,String bloodgroup) {
         this.name = name;

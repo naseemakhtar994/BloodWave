@@ -37,7 +37,7 @@ import java.util.Map;
 
 public class CreateDonerAccountActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
-    EditText editTextNumber, editTextEmail, editTextName;
+    EditText editTextNumber, editTextEmail, editTextName,editTexAddressr;
     RadioGroup radioGroupGender, radioBloodGroup;
     private FirebaseAuth mAuth;
     Spinner blood_spinner;
@@ -65,6 +65,7 @@ public class CreateDonerAccountActivity extends AppCompatActivity {
         blood_spinner = findViewById(R.id.blood_spinner);
         editTextNumber = findViewById(R.id.editTextNumber);
         editTextEmail = findViewById(R.id.editTextEmail);
+        editTexAddressr = findViewById(R.id.editTexAddressr);
         editTextName = findViewById(R.id.editTextName);
         button3 = findViewById(R.id.button3);
 
@@ -120,6 +121,8 @@ public class CreateDonerAccountActivity extends AppCompatActivity {
         final String name = editTextName.getText().toString();
         final String email = editTextEmail.getText().toString();
         final String mobile = editTextNumber.getText().toString();
+      final  String addrss=editTexAddressr.getText().toString();
+
         if (validateForm(name, email))
             mAuth.signInAnonymously()
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -136,10 +139,18 @@ public class CreateDonerAccountActivity extends AppCompatActivity {
 
                                 String gender = getValueFromRadioGroup(radioGroupGender);
                                 String bloodgroup = blood_spinner.getSelectedItem().toString();
-
 //                            ArrayList  data=new ArrayList<CreateDonerModel>();
 
-                                data.add(new CreateDonerModel(name, email, mobile, gender, bloodgroup));
+                                CreateDonerModel createDonerModel=new CreateDonerModel();
+
+                                createDonerModel.name=name;
+                                createDonerModel.email=email;
+                                createDonerModel.phone=mobile;
+                                createDonerModel.gender=gender;
+                                createDonerModel.bloodgroup=bloodgroup;
+                                createDonerModel.address=addrss;
+
+                                data.add(createDonerModel);
 //                            data.add(new CreateDonerModel("hhh",editTextEmail.getText().toString(),editTextNumber.getText().toString()));
                                 mDatabase.child("doners").setValue(data);
 

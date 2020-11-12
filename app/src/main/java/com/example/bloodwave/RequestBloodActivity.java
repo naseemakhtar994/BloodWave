@@ -35,7 +35,7 @@ import java.util.Calendar;
 
 public class RequestBloodActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
-    EditText editTextNumber, editTextEmail, editTextName;
+    EditText editTextNumber, editTextEmail, editTextName,editTexAddressr;
     RadioGroup radioGroupGender, radioBloodGroup;
     private FirebaseAuth mAuth;
     Spinner spinnerBloodGroup;
@@ -58,6 +58,7 @@ public class RequestBloodActivity extends AppCompatActivity {
         data=new ArrayList();
         radioGroupGender = findViewById(R.id.radioGroupGender);
         spinnerBloodGroup = findViewById(R.id.spinnerBloodGroup);
+        editTexAddressr = findViewById(R.id.editTexAddressr);
         editTextNumber = findViewById(R.id.editTextNumber);
         dateView = findViewById(R.id.dateView);
         editTextEmail = findViewById(R.id.editTextEmail);
@@ -140,6 +141,8 @@ public class RequestBloodActivity extends AppCompatActivity {
         final String email = editTextEmail.getText().toString();
         final String mobile = editTextNumber.getText().toString();
         final String userEmail=getIntent().getStringExtra("myemail");
+        final  String addrss=editTexAddressr.getText().toString();
+
         if (validateForm(name, email))
             if (mAuth.getCurrentUser() == null) {
                 mAuth.signInAnonymously()
@@ -162,7 +165,22 @@ public class RequestBloodActivity extends AppCompatActivity {
                                     if(data==null){
                                         data=new ArrayList();
                                     }
-                                    data.add(new CreateDonerModel(name, email, mobile, "gender", bloodgroup, date,userEmail));
+
+
+                                    CreateDonerModel createDonerModel=new CreateDonerModel();
+
+                                    createDonerModel.name=name;
+                                    createDonerModel.email=email;
+                                    createDonerModel.phone=mobile;
+                                    createDonerModel.gender="gender";
+                                    createDonerModel.bloodgroup=bloodgroup;
+                                    createDonerModel.requesterEmail=userEmail;
+                                    createDonerModel.date=date;
+                                    createDonerModel.address=addrss;
+
+                                    data.add(createDonerModel);
+
+//                                    data.add(new CreateDonerModel(name, email, mobile, "gender", bloodgroup, date,userEmail));
                                     mDatabase.child("requests").setValue(data);
                                     new Common().showDialog(RequestBloodActivity.this);
 
@@ -184,7 +202,20 @@ public class RequestBloodActivity extends AppCompatActivity {
                 if(data==null){
                     data=new ArrayList();
                 }
-                data.add(new CreateDonerModel(name, email, mobile, "gender", bloodgroup, date,userEmail));
+                CreateDonerModel createDonerModel=new CreateDonerModel();
+
+                createDonerModel.name=name;
+                createDonerModel.email=email;
+                createDonerModel.phone=mobile;
+                createDonerModel.gender="gender";
+                createDonerModel.bloodgroup=bloodgroup;
+                createDonerModel.requesterEmail=userEmail;
+                createDonerModel.date=date;
+                createDonerModel.address=addrss;
+
+                data.add(createDonerModel);
+
+//                data.add(new CreateDonerModel(name, email, mobile, "gender", bloodgroup, date,userEmail));
 //                            data.add(new CreateDonerModel("hhh",editTextEmail.getText().toString(),editTextNumber.getText().toString()));
                 mDatabase.child("requests").setValue(data);
                 new Common().showDialog(RequestBloodActivity.this);
